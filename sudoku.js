@@ -26,7 +26,7 @@ function setSelectedNumber (element) {
 
     resetStyleOfOldSelectedNumberElement();
     
-    element.style.backgroundColor = "cadetblue";
+    element.style.backgroundColor = "steelblue";
     element.style.color = "white";
 }
 
@@ -53,7 +53,7 @@ function setSelectedNumberToEmpty () {
     
     resetStyleOfOldSelectedNumberElement();
 
-    selectNumberNone.style.backgroundColor = "cadetblue";
+    selectNumberNone.style.backgroundColor = "steelblue";
     selectNumberNone.style.color = "white";
 }
 
@@ -61,14 +61,14 @@ function setSelectedNumberToEmpty () {
 // remove style from old element
 function resetStyleOfOldSelectedNumberElement () {
     for (i = 0; i < selectNumbers.length; i++) {
-        if (selectNumbers[i].style.backgroundColor === "cadetblue") {
+        if (selectNumbers[i].style.backgroundColor === "steelblue") {
             selectNumbers[i].style.backgroundColor = "white";
             selectNumbers[i].style.color = "black";
             return;
         }
     }
 
-    if (selectNumberNone.style.backgroundColor === "cadetblue") {
+    if (selectNumberNone.style.backgroundColor === "steelblue") {
         selectNumberNone.style.backgroundColor = "white";
         selectNumberNone.style.color = "red";
     }
