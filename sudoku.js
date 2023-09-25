@@ -5,6 +5,7 @@ let selectNumberNone = document.getElementById("number-select-none");
 
 let sudokuElementsArray = [[],[],[],[],[],[],[],[],[]];
 
+// sets sudokuElementsArray
 for (y = 0; y < 9; y++) {
     for (x = 0; x < 9; x++) {
         sudokuElementsArray[y][x] = sudokuElements[9 * y + x];
@@ -75,6 +76,22 @@ function resetStyleOfOldSelectedNumberElement () {
 }
 
 
+
+// other functions
+// returns random number
+function randomInt (max, min) {
+    return Math.floor(Math.random() * (max - min)) + min;
+}
+
+// finds the index of a given value in an array
+function findIndex (value, array) {
+    return array.findIndex(function (valueToSearch) {
+        return valueToSearch === value;
+    });
+}
+
+
+
 // fill sudoku puzzle methode 1
 /*let numbers = [1,2,3,4,5,6,7,8,9];
 let offset = 0;
@@ -105,7 +122,7 @@ for (i = 0; i < 9; i++) {
 
 // fill sudoku puzzle methode 2
 // |- sets the sudoku values of block 1 ----------------------------------------------------------------------|
-// block 1 row: 1, 2, 3
+// block 1 row: 1, 2, 3 ----------------------------------------<1>
 let numbers = [1,2,3,4,5,6,7,8,9];
 
 for (y = 0; y < 3; y++) {
@@ -118,7 +135,7 @@ for (y = 0; y < 3; y++) {
 }
 
 // |- sets the sudoku values of block 2 ----------------------------------------------------------------------|
-// block 2 row: 1
+// block 2 row: 1 ----------------------------------------<2>
 numbers = [1,2,3,4,5,6,7,8,9];
 let ignoreNumbers = [];
 
@@ -144,7 +161,7 @@ for (y = 0; y < 1; y++) {
     }
 }
 
-// block 2 row: 2
+// block 2 row: 2 ----------------------------------------<2>
 numbers = [1,2,3,4,5,6,7,8,9];
 ignoreNumbers = [];
 
@@ -183,7 +200,7 @@ for (y = 1; y < 2; y++) {
     }
 }
 
-// block 2 row: 3
+// block 2 row: 3 ----------------------------------------<2>
 numbers = [1,2,3,4,5,6,7,8,9];
 ignoreNumbers = [];
 
@@ -226,18 +243,3 @@ for (y = 2; y < 3; y++) {
 
 console.log(ignoreNumbers);
 // console.log(numbers);
-
-
-
-// other functions
-// returns random number
-function randomInt (max, min) {
-    return Math.floor(Math.random() * (max - min)) + min;
-}
-
-// finds the index of a given value in an array
-function findIndex (value, array) {
-    return array.findIndex(function (valueToSearch) {
-        return valueToSearch === value;
-    });
-}
