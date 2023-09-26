@@ -120,6 +120,16 @@ for (i = 0; i < 9; i++) {
 }*/
 
 
+// functions for methode 2
+function setIgnoreNumbers (posYmin, posYmax, posXmin, posXmax) {
+    for (y = posYmin; y < posYmax; y++) {
+        for (x = posXmin; x < posXmax; x++) {
+            ignoreNumbers[ignoreNumbers.length] = Number(sudokuElementsArray[y][x].innerText);
+        }
+    }
+}
+
+
 // fill sudoku puzzle methode 2
 // |- sets the sudoku values of block 1 ----------------------------------------------------------------------|
 // block 1 row: 1, 2, 3 ----------------------------------------<1>
@@ -140,11 +150,7 @@ numbers = [1,2,3,4,5,6,7,8,9];
 let ignoreNumbers = [];
 
 // get numbers to ignore
-for (y = 0; y < 1; y++) {
-    for (x = 0; x < 3; x++) {
-        ignoreNumbers[ignoreNumbers.length] = Number(sudokuElementsArray[y][x].innerText);
-    }
-}
+setIgnoreNumbers(0, 1, 0, 3);
 
 // removes the elements to ignore from numbers
 for (i = 0; i < ignoreNumbers.length; i++) {
@@ -166,17 +172,8 @@ numbers = [1,2,3,4,5,6,7,8,9];
 ignoreNumbers = [];
 
 // get numbers to ignore
-for (y = 1; y < 2; y++) {
-    for (x = 0; x < 3; x++) {
-        ignoreNumbers[ignoreNumbers.length] = Number(sudokuElementsArray[y][x].innerText);
-    }
-}
-
-for (y = 0; y < 1; y++) {
-    for (x = 3; x < 6; x++) {
-        ignoreNumbers[ignoreNumbers.length] = Number(sudokuElementsArray[y][x].innerText);
-    }
-}
+setIgnoreNumbers(1, 2, 0, 3);
+setIgnoreNumbers(0, 1, 3, 6);
 
 // removes the elements to ignore from numbers
 for (i = 0; i < ignoreNumbers.length; i++) {
@@ -205,17 +202,8 @@ numbers = [1,2,3,4,5,6,7,8,9];
 ignoreNumbers = [];
 
 // get numbers to ignore
-for (y = 2; y < 3; y++) {
-    for (x = 0; x < 3; x++) {
-        ignoreNumbers[ignoreNumbers.length] = Number(sudokuElementsArray[y][x].innerText);
-    }
-}
-
-for (y = 0; y < 2; y++) {
-    for (x = 3; x < 6; x++) {
-        ignoreNumbers[ignoreNumbers.length] = Number(sudokuElementsArray[y][x].innerText);
-    }
-}
+setIgnoreNumbers(2, 3, 0, 3);
+setIgnoreNumbers(0, 2, 3, 6);
 
 // removes the elements to ignore from numbers
 for (i = 0; i < ignoreNumbers.length; i++) {
@@ -229,8 +217,6 @@ for (i = 0; i < ignoreNumbers.length; i++) {
     }
 }
 
-console.log(numbers);
-
 // sets the values of row 3
 for (y = 2; y < 3; y++) {
     for (x = 3; x < 6; x++) {
@@ -241,5 +227,5 @@ for (y = 2; y < 3; y++) {
     }
 }
 
-console.log(ignoreNumbers);
+// console.log(ignoreNumbers);
 // console.log(numbers);
