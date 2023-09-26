@@ -142,20 +142,25 @@ function removeElementsToIgnoreFromNumbers () {
     }
 }
 
+function setSudokuValuesOfGivenPos (minYpos, maxYpos, minXpos, maxXpos) {
+    for (y = minYpos; y < maxYpos; y++) {
+        for (x = minXpos; x < maxXpos; x++) {
+            let numberIndex = randomInt(numbers.length, 0);
+    
+            sudokuElementsArray[y][x].innerText = numbers[numberIndex];
+            numbers.splice(numberIndex, 1);
+        }
+    }
+}
+
 
 // fill sudoku puzzle methode 2
 // |- sets the sudoku values of block 1 ----------------------------------------------------------------------|
 // block 1 row: 1, 2, 3 ----------------------------------------<1>
 let numbers = [1,2,3,4,5,6,7,8,9];
 
-for (y = 0; y < 3; y++) {
-    for (x = 0; x < 3; x++) {
-        let numberIndex = randomInt(numbers.length, 0);
+setSudokuValuesOfGivenPos(0, 3, 0, 3);
 
-        sudokuElementsArray[y][x].innerText = numbers[numberIndex];
-        numbers.splice(numberIndex, 1);
-    }
-}
 
 // |- sets the sudoku values of block 2 ----------------------------------------------------------------------|
 // block 2 row: 1 ----------------------------------------<2>
@@ -169,14 +174,8 @@ setIgnoreNumbers(0, 1, 0, 3);
 removeElementsToIgnoreFromNumbers();
 
 // sets the values of row 1
-for (y = 0; y < 1; y++) {
-    for (x = 3; x < 6; x++) {
-        let numberIndex = randomInt(numbers.length, 0);
+setSudokuValuesOfGivenPos(0, 1, 3, 6);
 
-        sudokuElementsArray[y][x].innerText = numbers[numberIndex];
-        numbers.splice(numberIndex, 1);
-    }
-}
 
 // block 2 row: 2 ----------------------------------------<2>
 numbers = [1,2,3,4,5,6,7,8,9];
@@ -190,14 +189,8 @@ setIgnoreNumbers(0, 1, 3, 6);
 removeElementsToIgnoreFromNumbers();
 
 // sets the values of row 2
-for (y = 1; y < 2; y++) {
-    for (x = 3; x < 6; x++) {
-        let numberIndex = randomInt(numbers.length, 0);
+setSudokuValuesOfGivenPos(1, 2, 3, 6);
 
-        sudokuElementsArray[y][x].innerText = numbers[numberIndex];
-        numbers.splice(numberIndex, 1);
-    }
-}
 
 // block 2 row: 3 ----------------------------------------<2>
 numbers = [1,2,3,4,5,6,7,8,9];
@@ -211,14 +204,9 @@ setIgnoreNumbers(0, 2, 3, 6);
 removeElementsToIgnoreFromNumbers();
 
 // sets the values of row 3
-for (y = 2; y < 3; y++) {
-    for (x = 3; x < 6; x++) {
-        let numberIndex = randomInt(numbers.length, 0);
+setSudokuValuesOfGivenPos(2, 3, 3, 6);
 
-        sudokuElementsArray[y][x].innerText = numbers[numberIndex];
-        numbers.splice(numberIndex, 1);
-    }
-}
+
 
 // console.log(ignoreNumbers);
 // console.log(numbers);
