@@ -129,6 +129,19 @@ function setIgnoreNumbers (posYmin, posYmax, posXmin, posXmax) {
     }
 }
 
+function removeElementsToIgnoreFromNumbers () {
+    for (i = 0; i < ignoreNumbers.length; i++) {
+        let index = findIndex(ignoreNumbers[i], numbers);
+    
+        if (index === -1) {
+            continue;
+        }
+        else {
+            numbers.splice(index, 1);
+        }
+    }
+}
+
 
 // fill sudoku puzzle methode 2
 // |- sets the sudoku values of block 1 ----------------------------------------------------------------------|
@@ -153,9 +166,7 @@ let ignoreNumbers = [];
 setIgnoreNumbers(0, 1, 0, 3);
 
 // removes the elements to ignore from numbers
-for (i = 0; i < ignoreNumbers.length; i++) {
-    numbers.splice(findIndex(ignoreNumbers[i], numbers), 1);
-}
+removeElementsToIgnoreFromNumbers();
 
 // sets the values of row 1
 for (y = 0; y < 1; y++) {
@@ -176,16 +187,7 @@ setIgnoreNumbers(1, 2, 0, 3);
 setIgnoreNumbers(0, 1, 3, 6);
 
 // removes the elements to ignore from numbers
-for (i = 0; i < ignoreNumbers.length; i++) {
-    let index = findIndex(ignoreNumbers[i], numbers);
-
-    if (index === -1) {
-        continue;
-    }
-    else {
-        numbers.splice(index, 1);
-    }
-}
+removeElementsToIgnoreFromNumbers();
 
 // sets the values of row 2
 for (y = 1; y < 2; y++) {
@@ -206,16 +208,7 @@ setIgnoreNumbers(2, 3, 0, 3);
 setIgnoreNumbers(0, 2, 3, 6);
 
 // removes the elements to ignore from numbers
-for (i = 0; i < ignoreNumbers.length; i++) {
-    let index = findIndex(ignoreNumbers[i], numbers);
-
-    if (index === -1) {
-        continue;
-    }
-    else {
-        numbers.splice(index, 1);
-    }
-}
+removeElementsToIgnoreFromNumbers();
 
 // sets the values of row 3
 for (y = 2; y < 3; y++) {
