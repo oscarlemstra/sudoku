@@ -156,56 +156,61 @@ function setSudokuValuesOfGivenPos (minYpos, maxYpos, minXpos, maxXpos) {
 
 // fill sudoku puzzle methode 2
 // |- sets the sudoku values of block 1 ----------------------------------------------------------------------|
-// block 1 row: 1, 2, 3 ----------------------------------------<1>
+// block 1 row: 1, 2, 3 ----------------------------------------<b1 r1, 2, 3>
 let numbers = [1,2,3,4,5,6,7,8,9];
+let ignoreNumbers = [];
 
+// sets the values of row 1, 2, 3
 setSudokuValuesOfGivenPos(0, 3, 0, 3);
 
 
 // |- sets the sudoku values of block 2 ----------------------------------------------------------------------|
-// block 2 row: 1 ----------------------------------------<2>
-numbers = [1,2,3,4,5,6,7,8,9];
-let ignoreNumbers = [];
+while (sudokuElementsArray[2][5].innerText === "" || sudokuElementsArray[2][5].innerText === "undefined") {
+    // block 2 row: 1 ----------------------------------------<b2 r1>
+    numbers = [1,2,3,4,5,6,7,8,9];
+    ignoreNumbers = [];
 
-// get numbers to ignore
-setIgnoreNumbers(0, 1, 0, 3);
+    // get numbers to ignore
+    setIgnoreNumbers(0, 1, 0, 3);
 
-// removes the elements to ignore from numbers
-removeElementsToIgnoreFromNumbers();
+    // removes the elements to ignore from numbers
+    removeElementsToIgnoreFromNumbers();
 
-// sets the values of row 1
-setSudokuValuesOfGivenPos(0, 1, 3, 6);
-
-
-// block 2 row: 2 ----------------------------------------<2>
-numbers = [1,2,3,4,5,6,7,8,9];
-ignoreNumbers = [];
-
-// get numbers to ignore
-setIgnoreNumbers(1, 2, 0, 3);
-setIgnoreNumbers(0, 1, 3, 6);
-
-// removes the elements to ignore from numbers
-removeElementsToIgnoreFromNumbers();
-
-// sets the values of row 2
-setSudokuValuesOfGivenPos(1, 2, 3, 6);
+    // sets the values of row 1
+    setSudokuValuesOfGivenPos(0, 1, 3, 6);
 
 
-// block 2 row: 3 ----------------------------------------<2>
-numbers = [1,2,3,4,5,6,7,8,9];
-ignoreNumbers = [];
+    // block 2 row: 2 ----------------------------------------<b2 r2>
+    numbers = [1,2,3,4,5,6,7,8,9];
+    ignoreNumbers = [];
 
-// get numbers to ignore
-setIgnoreNumbers(2, 3, 0, 3);
-setIgnoreNumbers(0, 2, 3, 6);
+    // get numbers to ignore
+    setIgnoreNumbers(1, 2, 0, 3);
+    setIgnoreNumbers(0, 1, 3, 6);
 
-// removes the elements to ignore from numbers
-removeElementsToIgnoreFromNumbers();
+    // removes the elements to ignore from numbers
+    removeElementsToIgnoreFromNumbers();
 
-// sets the values of row 3
-setSudokuValuesOfGivenPos(2, 3, 3, 6);
+    // sets the values of row 2
+    setSudokuValuesOfGivenPos(1, 2, 3, 6);
 
+
+    // block 2 row: 3 ----------------------------------------<b2 r3>
+    numbers = [1,2,3,4,5,6,7,8,9];
+    ignoreNumbers = [];
+
+    // get numbers to ignore
+    setIgnoreNumbers(2, 3, 0, 3);
+    setIgnoreNumbers(0, 2, 3, 6);
+
+    // removes the elements to ignore from numbers
+    removeElementsToIgnoreFromNumbers();
+
+    // sets the values of row 3
+    setSudokuValuesOfGivenPos(2, 3, 3, 6);
+
+    console.log("block 2");
+}
 
 
 // console.log(ignoreNumbers);
