@@ -348,5 +348,54 @@ removeElementsToIgnoreFromNumbers();
 setSudokuValuesOfGivenPos(6, 9, 2, 3);
 
 
+// |- sets the sudoku values of block 4 ----------------------------------------------------------------------|
+// block 4 field: 1 ----------------------------------------<b4 f1>
+numbers = [1,2,3,4,5,6,7,8,9];
+ignoreNumbers = [];
+setIgnoreNumbers(0, 3, 3, 4);
+setIgnoreNumbers(3, 4, 0, 3);
+removeElementsToIgnoreFromNumbers();
+setSudokuValuesOfGivenPos(3, 4, 3, 4);
+
+// block 4 field: 2 ----------------------------------------<b4 f2>
+numbers = [1,2,3,4,5,6,7,8,9];
+ignoreNumbers = [];
+setIgnoreNumbers(0, 3, 4, 5);
+setIgnoreNumbers(3, 4, 0, 4);
+removeElementsToIgnoreFromNumbers();
+setSudokuValuesOfGivenPos(3, 4, 4, 5);
+
+// block 4 field: 3 ----------------------------------------<b4 f3>
+numbers = [1,2,3,4,5,6,7,8,9];
+ignoreNumbers = [];
+setIgnoreNumbers(0, 3, 5, 6);
+setIgnoreNumbers(3, 4, 0, 5);
+removeElementsToIgnoreFromNumbers();
+setSudokuValuesOfGivenPos(3, 4, 5, 6);
+
+// block 4 field: 4 ----------------------------------------<b4 f4>
+numbers = [1,2,3,4,5,6,7,8,9];
+ignoreNumbers = [];
+setIgnoreNumbers(0, 3, 3, 4);
+setIgnoreNumbers(4, 5, 0, 3);
+setIgnoreNumbers(3, 4, 3, 6);
+removeElementsToIgnoreFromNumbers();
+setSudokuValuesOfGivenPos(4, 5, 3, 4);
+
+// block 4 field: 5 ----------------------------------------<b4 f5>
+numbers = [1,2,3,4,5,6,7,8,9];
+ignoreNumbers = [];
+setIgnoreNumbers(0, 3, 4, 5);
+setIgnoreNumbers(4, 5, 0, 4);
+setIgnoreNumbers(3, 4, 3, 6);
+removeElementsToIgnoreFromNumbers();
+setSudokuValuesOfGivenPos(4, 5, 4, 5);
+
+// block 4 field: 6 ----------------------------------------<b4 f6>
+// block 4 field: 7 ----------------------------------------<b4 f7>
+// block 4 field: 8 ----------------------------------------<b4 f8>
+// block 4 field: 9 ----------------------------------------<b4 f9>
+
+
 // console.log(ignoreNumbers);
 // console.log(numbers);
