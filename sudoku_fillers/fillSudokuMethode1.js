@@ -1,12 +1,3 @@
-let sudokuElements = document.getElementById("sudoku-puzzle").getElementsByTagName("td");
-
-
-// returns random number
-function randomInt (max, min) {
-    return Math.floor(Math.random() * (max - min)) + min;
-}
-
-
 // fill sudoku puzzle method 1
 let numbers = [1,2,3,4,5,6,7,8,9];
 let offset = 0;
