@@ -129,6 +129,12 @@ function checkSudokuBlockForUndefined (minYpos, maxYpos, minXpos, maxXpos) {
     for (y = minYpos; y < maxYpos; y++) {
         for (x = minXpos; x < maxXpos; x++) {
             if (sudokuElementsArray[y][x].innerText === "" || sudokuElementsArray[y][x].innerText === "undefined") {
+                // empty given block
+                for (y = minYpos; y < maxYpos; y++) {
+                    for (x = minXpos; x < maxXpos; x++) {
+                        sudokuElementsArray[y][x].innerText = "";
+                    }
+                }
                 return true;
             }
             else {
