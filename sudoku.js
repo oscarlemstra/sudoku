@@ -125,6 +125,14 @@ function setSudokuValuesOfGivenPos (minYpos, maxYpos, minXpos, maxXpos) {
     }
 }
 
+function emptyGivenSudokuPos (minYpos, maxYpos, minXpos, maxXpos) {
+    for (y = minYpos; y < maxYpos; y++) {
+        for (x = minXpos; x < maxXpos; x++) {
+            sudokuElementsArray[y][x].innerText = "";
+        }
+    }
+}
+
 function checkSudokuBlockForUndefined (minYpos, maxYpos, minXpos, maxXpos) {
     for (y = minYpos; y < maxYpos; y++) {
         for (x = minXpos; x < maxXpos; x++) {
