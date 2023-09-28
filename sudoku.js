@@ -92,7 +92,7 @@ function findIndex (value, array) {
 
 
 
-// functions for methode 2
+// functions for fill methods 2
 function setIgnoreNumbers (posYmin, posYmax, posXmin, posXmax) {
     for (y = posYmin; y < posYmax; y++) {
         for (x = posXmin; x < posXmax; x++) {
@@ -140,7 +140,7 @@ function checkSudokuBlockForUndefined (minYpos, maxYpos, minXpos, maxXpos) {
 }
 
 
-// fill sudoku puzzle methode 2
+// fill sudoku puzzle method 2
 // |- sets the sudoku values of block 1 ----------------------------------------------------------------------|
 // block 1 row: 1, 2, 3 ----------------------------------------<b1 r1, 2, 3>
 let numbers = [1,2,3,4,5,6,7,8,9];

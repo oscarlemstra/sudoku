@@ -7,7 +7,7 @@ function randomInt (max, min) {
 }
 
 
-// fill sudoku puzzle methode 1
+// fill sudoku puzzle method 1
 let numbers = [1,2,3,4,5,6,7,8,9];
 let offset = 0;
 
