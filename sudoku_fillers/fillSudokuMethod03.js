@@ -157,4 +157,31 @@ while (canGenerateSudoku) {
         console.log("block 8");
     }
     generateCount = 0;
+
+
+    // fills block 9
+    while (checkSudokuBlockForUndefined(6, 9, 6, 9) && canGenerateBlock) {
+        for (mainY = 6; mainY < 9; mainY++) {
+            for (mainX = 6; mainX < 9; mainX++) {
+                setIgnoreNumbers(6, 9, 6, 9);
+                setIgnoreNumbers(mainY, mainY+1, 0, 9);
+                setIgnoreNumbers(0, 9, mainX, mainX+1);
+                removeElementsToIgnoreFromNumbers();
+                setSudokuValuesOfGivenPos(mainY, mainY+1, mainX, mainX+1);
+
+                numbers = [1,2,3,4,5,6,7,8,9];
+                ignoreNumbers = [];
+            }
+        }
+        generateCount++;
+
+        if (generateCount >= 2) {
+            canGenerateSudoku = true;
+            canGenerateBlock = false;
+            emptyGivenSudokuPos(0, 9, 0, 9);
+        }
+
+        console.log("block 9");
+    }
+    generateCount = 0;
 }
