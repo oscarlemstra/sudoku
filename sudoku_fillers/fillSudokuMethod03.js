@@ -105,7 +105,7 @@ while (canGenerateSudoku) {
         }
         generateCount++;
 
-        if (generateCount > 50) {
+        if (generateCount >= 50) {
             canGenerateSudoku = true;
             canGenerateBlock = false;
             emptyGivenSudokuPos(0, 9, 0, 9);
@@ -148,7 +148,7 @@ while (canGenerateSudoku) {
         }
         generateCount++;
 
-        if (generateCount > 50) {
+        if (generateCount >= 50) {
             canGenerateSudoku = true;
             canGenerateBlock = false;
             emptyGivenSudokuPos(0, 9, 0, 9);
