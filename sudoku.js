@@ -32,20 +32,6 @@ function setSelectedNumber (element) {
 }
 
 
-// gives all the #sudoku-puzzle td elements the onclick event: setSudokuElement
-for (i = 0; i < sudokuElements.length; i++) {
-    let ii = i;
-
-    sudokuElements[i].addEventListener("click", function () {
-        setSudokuElement(sudokuElements[ii]);
-    });
-}
-
-function setSudokuElement (element) {
-    element.innerText = selectedNumber;
-}
-
-
 // gives the #number-select-none element the onclick event: setSelectedNumberToEmpty
 selectNumberNone.addEventListener("click", setSelectedNumberToEmpty);
 
