@@ -1,7 +1,7 @@
 let selectedNumber = "";
 let selectNumbers = document.getElementById("number-select").getElementsByTagName("td");
-let sudokuElements = document.getElementById("sudoku-puzzle").getElementsByTagName("td");
 let selectNumberNone = document.getElementById("number-select-none");
+let sudokuElements = document.getElementById("sudoku-puzzle").getElementsByTagName("td");
 
 let sudokuElementsArray = [[],[],[],[],[],[],[],[],[]];
 

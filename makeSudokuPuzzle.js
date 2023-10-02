@@ -1,14 +1,14 @@
 // empty sudoku
-// 64 is max
+// max number removal is 64
 for (y = 0; y < 9; y++) {
     for (x = 0; x < 9; x++) {
-        if (randomInt(101, 0) > 35) {
+        if (randomInt(101, 0) > 90) {
             sudokuElementsArray[y][x].innerText = "";
         }
     }
 }
 
-// gives the solid numbers a background color
+// gives the clue numbers a background color
 for (y = 0; y < 9; y++) {
     for (x = 0; x < 9; x++) {
         if (sudokuElementsArray[y][x].innerText !== "") {
