@@ -1,4 +1,4 @@
-let sudokuSolution = [[],[],[],[],[],[],[],[],[]];
+let sudokuSolution = [[],[],[],[],[],[],[],[],[]]; // kan er ook een lange string van maken
 
 // sets the sudoku solution
 for (y = 0; y < 9; y++) {
@@ -33,6 +33,17 @@ for (y = 0; y < 9; y++) {
 function setSudokuElement (element) {
     element.innerText = selectedNumber;
 }
+
+function lookForNumberInArea (number, minYpos, maxYpos, minXpos, maxXpos) {
+    for (y = minYpos; y < maxYpos; y++) {
+        for (x = minXpos; x < maxXpos; x++) {
+            if (number === sudokuElementsArray[y][x].innerText) {
+                sudokuElementsArray[y][x].style.color = "red";
+            }
+        }
+    }
+}
+
 
 // gives all the empty #sudoku-puzzle td elements the onclick event: setSudokuElement
 for (i = 0; i < sudokuElements.length; i++) {
