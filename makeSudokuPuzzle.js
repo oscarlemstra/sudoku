@@ -1,3 +1,14 @@
+let sudokuSolution = [[],[],[],[],[],[],[],[],[]];
+
+// sets the sudoku solution
+for (y = 0; y < 9; y++) {
+    for (x = 0; x < 9; x++) {
+        sudokuSolution[y][x] = sudokuElementsArray[y][x].innerText;
+    }
+}
+console.log(sudokuSolution);
+
+
 // empty sudoku
 // max number removal is 64
 for (y = 0; y < 9; y++) {
