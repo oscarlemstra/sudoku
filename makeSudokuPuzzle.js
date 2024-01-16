@@ -44,7 +44,7 @@ function setSudokuElement (element) {
     element.innerText = selectedNumber;
 }
 
-function lookForDoubleNumberInArea (number, minYpos, maxYpos, minXpos, maxXpos) {
+function lookForDoubleNumbersInArea (number, minYpos, maxYpos, minXpos, maxXpos) {
     let foundNumbers = [];
 
     for (y = minYpos; y < maxYpos; y++) {
