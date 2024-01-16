@@ -1,4 +1,6 @@
 let sudokuSolution = [[],[],[],[],[],[],[],[],[]]; // kan er ook een lange string van maken
+let redSudokuElements = [];
+
 
 // sets the sudoku solution
 for (y = 0; y < 9; y++) {
@@ -29,6 +31,15 @@ for (y = 0; y < 9; y++) {
 }
 
 
+function makeRedSudokuElementsBlack () {
+    if (redSudokuElements.length > 0) {
+        for (i = 0; i < redSudokuElements.length; i++) {
+            redSudokuElements[i].style.color = "black";
+        }
+        redSudokuElements = [];
+    }
+}
+
 function setSudokuElement (element) {
     element.innerText = selectedNumber;
 }
@@ -47,6 +58,7 @@ function lookForNumberInArea (number, minYpos, maxYpos, minXpos, maxXpos) {
     if (foundNumbers.length > 1) {
         for (i = 0; i < foundNumbers.length; i++) {
             foundNumbers[i].style.color = "red";
+            redSudokuElements.push(foundNumbers[i]);
         }
     }
 }
@@ -69,6 +81,7 @@ for (y = 0; y < 9; y++) {
 
         if (sudokuElementsArray[yy][xx].innerText === "") {
             sudokuElementsArray[yy][xx].addEventListener("click", function () {
+                makeRedSudokuElementsBlack();
                 setSudokuElement(sudokuElementsArray[yy][xx]);
                 lookForNumberInArea(selectedNumber, yy, yy+1, 0, 9);
                 lookForNumberInArea(selectedNumber, 0, 9, xx, xx+1);
