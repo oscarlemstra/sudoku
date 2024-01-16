@@ -44,7 +44,7 @@ function setSudokuElement (element) {
     element.innerText = selectedNumber;
 }
 
-function lookForNumberInArea (number, minYpos, maxYpos, minXpos, maxXpos) {
+function lookForDoubleNumberInArea (number, minYpos, maxYpos, minXpos, maxXpos) {
     let foundNumbers = [];
 
     for (y = minYpos; y < maxYpos; y++) {
@@ -83,9 +83,9 @@ for (y = 0; y < 9; y++) {
             sudokuElementsArray[yy][xx].addEventListener("click", function () {
                 makeRedSudokuElementsBlack();
                 setSudokuElement(sudokuElementsArray[yy][xx]);
-                lookForNumberInArea(selectedNumber, yy, yy+1, 0, 9);
-                lookForNumberInArea(selectedNumber, 0, 9, xx, xx+1);
-                lookForNumberInArea(selectedNumber, getSudokuBlockPos(yy), getSudokuBlockPos(yy, true), getSudokuBlockPos(xx), getSudokuBlockPos(xx, true));
+                // lookForNumberInArea(selectedNumber, yy, yy+1, 0, 9);
+                // lookForNumberInArea(selectedNumber, 0, 9, xx, xx+1);
+                // lookForNumberInArea(selectedNumber, getSudokuBlockPos(yy), getSudokuBlockPos(yy, true), getSudokuBlockPos(xx), getSudokuBlockPos(xx, true));
             });
         }
     }
