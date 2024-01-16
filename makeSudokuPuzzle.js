@@ -61,7 +61,7 @@ function getSudokuBlockPos (sudokuElementPos, getBlockEndPos = false) {
 }
 
 
-// gives all the empty #sudoku-puzzle td elements the onclick event: setSudokuElement
+// gives all the empty #sudoku-puzzle td elements the onclick event: setSudokuElement, lookForNumberInArea
 for (y = 0; y < 9; y++) {
     let yy = y;
     for (x = 0; x < 9; x++) {
