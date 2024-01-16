@@ -51,6 +51,15 @@ function lookForNumberInArea (number, minYpos, maxYpos, minXpos, maxXpos) {
     }
 }
 
+function getSudokuBlockPos (sudokuElementPos, getBlockEndPos = false) {
+    if (!getBlockEndPos) {
+        return Math.floor(sudokuElementPos / 3) * 3;
+    }
+    else {
+        return Math.floor(sudokuElementPos / 3) * 3 + 3;
+    }
+}
+
 
 // gives all the empty #sudoku-puzzle td elements the onclick event: setSudokuElement
 for (y = 0; y < 9; y++) {
@@ -63,6 +72,7 @@ for (y = 0; y < 9; y++) {
                 setSudokuElement(sudokuElementsArray[yy][xx]);
                 lookForNumberInArea(selectedNumber, yy, yy+1, 0, 9);
                 lookForNumberInArea(selectedNumber, 0, 9, xx, xx+1);
+                lookForNumberInArea(selectedNumber, getSudokuBlockPos(yy), getSudokuBlockPos(yy, true), getSudokuBlockPos(xx), getSudokuBlockPos(xx, true));
             });
         }
     }
