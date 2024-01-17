@@ -1,5 +1,7 @@
 let sudokuSolution = [[],[],[],[],[],[],[],[],[]]; // kan er ook een lange string van maken
 let redSudokuElements = [];
+let emptiedSudokuElements = 0;
+let userInputAmount = 0;
 
 
 // sets the sudoku solution
@@ -16,10 +18,11 @@ for (y = 0; y < 9; y++) {
     for (x = 0; x < 9; x++) {
         if (randomInt(101, 0) > 90) {
             sudokuElementsArray[y][x].innerText = "";
-            console.log("empty sudoku elements");
+            emptiedSudokuElements++;
         }
     }
 }
+console.log(emptiedSudokuElements, "emptied sudoku elements");
 
 // gives the clue numbers a background color
 for (y = 0; y < 9; y++) {
@@ -84,6 +87,19 @@ function makeDoubleNumbersRed () {
     }
 }
 
+function checkIfSudokuIsCorrect () {
+    if (userInputAmount >= emptiedSudokuElements) {
+        for (y = 0; y < 9; y++) {
+            for (x = 0; x < 9; x++) {
+                if (sudokuSolution[y][x] !== sudokuElementsArray[y][x].innerText) {
+                    return console.log("false");
+                }
+            }
+        }
+        return console.log("true");
+    }
+}
+
 
 // gives all the empty #sudoku-puzzle td elements the onclick event: makeRedSudokuElementsBlack, setSudokuElement, makeDoubleNumbersRed
 for (y = 0; y < 9; y++) {
@@ -96,6 +112,8 @@ for (y = 0; y < 9; y++) {
                 makeRedSudokuElementsBlack();
                 setSudokuElement(sudokuElementsArray[yy][xx]);
                 makeDoubleNumbersRed();
+                userInputAmount++;
+                checkIfSudokuIsCorrect();
             });
         }
     }
