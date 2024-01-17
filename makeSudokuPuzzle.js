@@ -1,4 +1,4 @@
-let sudokuSolution = [[],[],[],[],[],[],[],[],[]]; // kan er ook een lange string van maken
+let sudokuSolution = [[],[],[],[],[],[],[],[],[]];
 let redSudokuElements = [];
 let emptiedSudokuElements = 0;
 let userInputAmount = 0;
