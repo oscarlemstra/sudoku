@@ -16,7 +16,7 @@ for (y = 0; y < 9; y++) {
     for (x = 0; x < 9; x++) {
         if (randomInt(101, 0) > 90) {
             sudokuElementsArray[y][x].innerText = "";
-            console.log("empty sudoku element")
+            console.log("empty sudoku elements");
         }
     }
 }
@@ -89,7 +89,7 @@ function makeDoubleNumbersRed () {
 for (y = 0; y < 9; y++) {
     let yy = y;
     for (x = 0; x < 9; x++) {
-        let xx = x
+        let xx = x;
 
         if (sudokuElementsArray[yy][xx].innerText === "") {
             sudokuElementsArray[yy][xx].addEventListener("click", function () {
