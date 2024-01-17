@@ -72,8 +72,20 @@ function getSudokuBlockPos (sudokuElementPos, getBlockEndPos = false) {
     }
 }
 
+function makeDoubleNumbersRed () {
+    for (mainY = 0; mainY < 9; mainY++) {
+        for (mainX = 0; mainX < 9; mainX++) {
+            if (sudokuElementsArray[mainY][mainX].innerText !== "" && sudokuElementsArray[mainY][mainX].style.backgroundColor === "") {
+                lookForDoubleNumbersInArea(sudokuElementsArray[mainY][mainX].innerText, mainY, mainY+1, 0, 9);
+                lookForDoubleNumbersInArea(sudokuElementsArray[mainY][mainX].innerText, 0, 9, mainX, mainX+1);
+                lookForDoubleNumbersInArea(sudokuElementsArray[mainY][mainX].innerText, getSudokuBlockPos(mainY), getSudokuBlockPos(mainY, true), getSudokuBlockPos(mainX), getSudokuBlockPos(mainX, true));
+            }
+        }
+    }
+}
 
-// gives all the empty #sudoku-puzzle td elements the onclick event: setSudokuElement, lookForNumberInArea
+
+// gives all the empty #sudoku-puzzle td elements the onclick event: makeRedSudokuElementsBlack, setSudokuElement, makeDoubleNumbersRed
 for (y = 0; y < 9; y++) {
     let yy = y;
     for (x = 0; x < 9; x++) {
@@ -83,9 +95,7 @@ for (y = 0; y < 9; y++) {
             sudokuElementsArray[yy][xx].addEventListener("click", function () {
                 makeRedSudokuElementsBlack();
                 setSudokuElement(sudokuElementsArray[yy][xx]);
-                // lookForNumberInArea(selectedNumber, yy, yy+1, 0, 9);
-                // lookForNumberInArea(selectedNumber, 0, 9, xx, xx+1);
-                // lookForNumberInArea(selectedNumber, getSudokuBlockPos(yy), getSudokuBlockPos(yy, true), getSudokuBlockPos(xx), getSudokuBlockPos(xx, true));
+                makeDoubleNumbersRed();
             });
         }
     }
