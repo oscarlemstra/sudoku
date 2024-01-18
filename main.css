@@ -43,6 +43,10 @@ td {
     font-family: sans-serif;
 }
 
+#sudoku-puzzle td {
+    transition: background-color 1s ease;
+}
+
 tr:nth-child(1) td {
     border-top: black solid 2px;
 }
