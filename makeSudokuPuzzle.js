@@ -87,6 +87,20 @@ function makeDoubleNumbersRed () {
     }
 }
 
+function playSolvedSudokuSound () {
+    let sounds = [
+        "./audio/children-yaysound-effect.mp3",
+        "./audio/ffxiv_level_up_DFe3J9y.mp3",
+        "./audio/flawless-victory_YNGr54X.mp3",
+        "./audio/sea-shanty.mp3",
+        "./audio/victoryff.swf.mp3"
+    ]
+
+    let audio = new Audio(sounds[randomInt(sounds.length, 0)]);
+    audio.volume = 0.3;
+    audio.play();
+}
+
 function solvedSudokuAnimation() {
     for (let y = 0; y < 9; y++) {
         for (let x = 0; x < 9; x++) {
