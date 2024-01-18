@@ -105,7 +105,7 @@ function solvedSudokuAnimation() {
     for (let y = 0; y < 9; y++) {
         for (let x = 0; x < 9; x++) {
             setTimeout(function () {
-                sudokuElementsArray[y][x].style.backgroundColor = "";
+                sudokuElementsArray[y][x].style.backgroundColor = "#00e600";
             }, 150 * (x + y) + 150);
         }
     }
