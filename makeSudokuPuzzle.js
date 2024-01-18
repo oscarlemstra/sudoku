@@ -113,14 +113,16 @@ function solvedSudokuAnimation() {
 
 function checkIfSudokuIsSolved () {
     if (userInputAmount >= emptiedSudokuElements) {
-        for (y = 0; y < 9; y++) {
-            for (x = 0; x < 9; x++) {
-                if (sudokuSolution[y][x] !== sudokuElementsArray[y][x].innerText) {
-                    return console.log("false");
+        for (mainY = 0; mainY < 9; mainY++) {
+            for (mainX = 0; mainX < 9; mainX++) {
+                if (sudokuSolution[mainY][mainX] !== sudokuElementsArray[mainY][mainX].innerText) {
+                    return console.log("sudoku is not solved");
                 }
             }
         }
-        return console.log("true");
+        playSolvedSudokuSound();
+        solvedSudokuAnimation();
+        return console.log("sudoku is solved");
     }
 }
 
