@@ -97,7 +97,7 @@ function solvedSudokuAnimation() {
     }
 }
 
-function checkIfSudokuIsCorrect () {
+function checkIfSudokuIsSolved () {
     if (userInputAmount >= emptiedSudokuElements) {
         for (y = 0; y < 9; y++) {
             for (x = 0; x < 9; x++) {
@@ -123,7 +123,7 @@ for (y = 0; y < 9; y++) {
                 setSudokuElement(sudokuElementsArray[yy][xx]);
                 makeDoubleNumbersRed();
                 userInputAmount++;
-                checkIfSudokuIsCorrect();
+                checkIfSudokuIsSolved();
             });
         }
     }
