@@ -23,10 +23,6 @@ body {
     font-family: sans-serif;
 }
 
-/* #number-select-none:hover {
-    background-color: yellow;
-} */
-
 
 /* table */
 table {
@@ -46,10 +42,6 @@ td {
     font-size: x-large;
     font-family: sans-serif;
 }
-
-/* #number-select td:hover {
-    background-color: yellow;
-} */
 
 tr:nth-child(1) td {
     border-top: black solid 2px;
