@@ -91,7 +91,6 @@ function playSolvedSudokuSound () {
     let sounds = [
         "./audio/children-yaysound-effect.mp3",
         "./audio/ffxiv_level_up_DFe3J9y.mp3",
-        "./audio/flawless-victory_YNGr54X.mp3",
         "./audio/sea-shanty.mp3",
         "./audio/victoryff.swf.mp3"
     ]
