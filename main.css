@@ -14,6 +14,13 @@ body {
     border-radius: 10px;
 }
 
+#difficulty-select-div {
+    padding: 0px 25px 25px 25px;
+    background-color: white;
+    border-radius: 10px;
+    font-family: sans-serif;
+}
+
 #number-select-none {
     width: 35px;
     height: 35px;
@@ -21,6 +28,23 @@ body {
     border: black solid 2px;
     font-size: x-large;
     font-family: sans-serif;
+}
+
+
+/* class */
+.difficulty-button {
+    padding: 10px;
+    background-color: steelblue;
+    border-radius: 10px;
+}
+
+.difficulty-button:hover {
+    background-color: #7eaacd;
+}
+
+.difficulty-img {
+    border-radius: 10px;
+    width: 120px;
 }
 
 
@@ -87,6 +111,10 @@ tr td:nth-child(1), tr td:nth-child(2), tr td:nth-child(4), tr td:nth-child(5), 
     display: flex;
 }
 
+.flex-direction-column {
+    flex-direction: column;
+}
+
 .flex-wrap {
     flex-wrap: wrap;
 }
@@ -109,4 +137,8 @@ tr td:nth-child(1), tr td:nth-child(2), tr td:nth-child(4), tr td:nth-child(5), 
 
 .gap-8 {
     gap: 8px;
+}
+
+.gap-20 {
+    gap: 20px;
 }
