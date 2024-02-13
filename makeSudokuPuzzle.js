@@ -12,15 +12,22 @@ for (y = 0; y < 9; y++) {
 }
 
 
-// empty sudoku
-// max number removal is 64
-for (y = 0; y < 9; y++) {
-    for (x = 0; x < 9; x++) {
-        if (randomInt(101, 0) > 90) {
-            sudokuElementsArray[y][x].innerText = "";
+let sudokuElementsToRemoveAmount = 65;   // 20-35-45-50-65
+let sudokuElementsRemovePercentage = 30; // 80-70-60-40-30
+
+// empty sudoku v2
+while (emptiedSudokuElements < sudokuElementsToRemoveAmount) {
+    for (i = 0; i < sudokuElements.length; i++) {
+        if (emptiedSudokuElements >= sudokuElementsToRemoveAmount) {
+            break;
+        }
+
+        if (randomInt(101, 0) > sudokuElementsRemovePercentage && sudokuElements[i].innerText !== "") {
+            sudokuElements[i].innerText = "";
             emptiedSudokuElements++;
         }
     }
+    console.log("while loops");
 }
 console.log(emptiedSudokuElements, "emptied sudoku elements");
 
