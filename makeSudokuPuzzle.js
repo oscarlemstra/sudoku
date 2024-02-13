@@ -31,6 +31,7 @@ while (emptiedSudokuElements < sudokuElementsToRemoveAmount) {
 }
 console.log(emptiedSudokuElements, "emptied sudoku elements");
 
+
 // gives the clue numbers a background color
 for (y = 0; y < 9; y++) {
     for (x = 0; x < 9; x++) {
