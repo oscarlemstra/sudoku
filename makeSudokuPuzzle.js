@@ -12,8 +12,8 @@ for (y = 0; y < 9; y++) {
 }
 
 
-let sudokuElementsToRemoveAmount = 65;   // 20-35-45-50-65
-let sudokuElementsRemovePercentage = 30; // 80-70-60-40-30
+let sudokuElementsToRemoveAmount = 24;   // 24-34-44-54-64
+let sudokuElementsRemovePercentage = 80; // 80-70-60-50-40
 
 // empty sudoku v2
 while (emptiedSudokuElements < sudokuElementsToRemoveAmount) {
