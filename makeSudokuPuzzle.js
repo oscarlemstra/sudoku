@@ -12,17 +12,22 @@ for (y = 0; y < 9; y++) {
 }
 
 
-let sudokuElementsToRemoveAmount = 24;   // 24-34-44-54-64
-let sudokuElementsRemovePercentage = 80; // 80-70-60-50-40
+//sudokuElementsToRemoveAmount:     24, 34, 44, 54, 64
+//sudokuElementsRemovePercentage:   80, 70, 60, 50, 40
+
+if (sessionStorage.getItem("sudokuElementsToRemoveAmount") === null || sessionStorage.getItem("sudokuElementsRemovePercentage") === null) {
+    sessionStorage.setItem("sudokuElementsToRemoveAmount", "24");
+    sessionStorage.setItem("sudokuElementsRemovePercentage", "80");
+}
 
 // empty sudoku v2
-while (emptiedSudokuElements < sudokuElementsToRemoveAmount) {
+while (emptiedSudokuElements < Number(sessionStorage.getItem("sudokuElementsToRemoveAmount"))) {
     for (i = 0; i < sudokuElements.length; i++) {
-        if (emptiedSudokuElements >= sudokuElementsToRemoveAmount) {
+        if (emptiedSudokuElements >= Number(sessionStorage.getItem("sudokuElementsToRemoveAmount"))) {
             break;
         }
 
-        if (randomInt(101, 0) > sudokuElementsRemovePercentage && sudokuElements[i].innerText !== "") {
+        if (randomInt(101, 0) > Number(sessionStorage.getItem("sudokuElementsRemovePercentage")) && sudokuElements[i].innerText !== "") {
             sudokuElements[i].innerText = "";
             emptiedSudokuElements++;
         }
