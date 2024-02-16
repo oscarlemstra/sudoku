@@ -11,9 +11,9 @@ for (y = 0; y < 9; y++) {
     }
 }
 
-
-//sudokuElementsToRemoveAmount:     24, 34, 44, 54, 64
-//sudokuElementsRemovePercentage:   80, 70, 60, 50, 40
+// sudoku difficulty curf values
+// sudokuElementsToRemoveAmount:     24, 34, 44, 54, 64
+// sudokuElementsRemovePercentage:   80, 70, 60, 50, 40
 
 if (sessionStorage.getItem("sudokuElementsToRemoveAmount") === null || sessionStorage.getItem("sudokuElementsRemovePercentage") === null) {
     sessionStorage.setItem("sudokuElementsToRemoveAmount", "24");
