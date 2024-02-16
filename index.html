@@ -4,137 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./main.css">
-    <title>Sudoku</title>
+    <title>Sudoku Moeilijkheidsgraad</title>
 </head>
-<body class="flex-box m-0 vh-100 justify-content-center align-items-center flex-direction-column gap-20">
-    <a id="new-sudoku" href="./test.html">Nieuwe Sudoku</a>
-    <div id="main-div" class="flex-box flex-wrap align-items-center justify-content-space-evenly gap-20 p-20">
-        <div id="sudoku-puzzle">
-            <table>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-        </div>
-        <div id="number-select" class="flex-box flex-direction-column align-items-center gap-8">
-            <table>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td>8</td>
-                    <td>9</td>
-                </tr>
-            </table>
-            <div id="number-select-none" class="flex-box justify-content-center align-items-center">X</div>
+<body class="flex-box m-0 vh-100 align-items-center justify-content-center">
+    <div id="difficulty-select-div" class="flex-box flex-direction-column align-items-center">
+        <h2>Kies Moeilijkheidsgraad</h2>
+        <div class="flex-box flex-wrap justify-content-center gap-20">
+            <div id="level-1" class="difficulty-button flex-box align-items-center">
+                <img class="difficulty-img" src="./images/level-1.png" alt="level-1">
+            </div>
+
+            <div id="level-2" class="difficulty-button flex-box align-items-center">
+                <img class="difficulty-img" src="./images/level-2.png" alt="level-2">
+            </div>
+
+            <div id="level-3" class="difficulty-button flex-box align-items-center">
+                <img class="difficulty-img" src="./images/level-3.png" alt="level-3">
+            </div>
+
+            <div id="level-4" class="difficulty-button flex-box align-items-center">
+                <img class="difficulty-img" src="./images/level-4.png" alt="level-4">
+            </div>
+            
+            <div id="level-5" class="difficulty-button flex-box align-items-center">
+                <img class="difficulty-img" src="./images/level-5.png" alt="level-5">
+            </div>
         </div>
     </div>
-    <script src="./sudoku.js"></script>
-    <script src="./sudoku_fillers/fillSudokuMethod03.js"></script>
-    <script src="./makeSudokuPuzzle.js"></script>
+    <script src="./sudokuDifficultySelect.js"></script>
 </body>
 </html>
