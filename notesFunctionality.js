@@ -15,6 +15,8 @@ notesButton.addEventListener("click", function () {
 });
 
 function addNotesElement (element) {
+    element.innerText = "";
+
     let parentDivForNotes = document.createElement("div");
     parentDivForNotes.classList.add("flex-box");
     parentDivForNotes.classList.add("flex-wrap");
