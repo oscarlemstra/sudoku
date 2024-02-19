@@ -147,11 +147,25 @@ for (y = 0; y < 9; y++) {
 
         if (sudokuElementsArray[yy][xx].innerText === "") {
             sudokuElementsArray[yy][xx].addEventListener("click", function () {
-                makeRedSudokuElementsBlack();
-                setSudokuElement(sudokuElementsArray[yy][xx]);
-                makeDoubleNumbersRed();
-                userInputAmount++;
-                checkIfSudokuIsSolved();
+                if (!canMakeNotes) {
+                    removeNotesElement(sudokuElementsArray[yy][xx]);
+
+                    makeRedSudokuElementsBlack();
+                    setSudokuElement(sudokuElementsArray[yy][xx]);
+                    makeDoubleNumbersRed();
+                    userInputAmount++;
+                    checkIfSudokuIsSolved();
+                }
+                else {
+                    if (!doesNotesElementExist(sudokuElementsArray[yy][xx])) {
+                        addNotesElement(sudokuElementsArray[yy][xx]);
+                        
+                        makeRedSudokuElementsBlack();
+                        makeDoubleNumbersRed();
+                    }
+
+                    setNote(sudokuElementsArray[yy][xx]);
+                }
             });
         }
     }
