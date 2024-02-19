@@ -41,7 +41,7 @@ function removeNotesElement (element) {
 }
 
 function doesNotesElementExist (element) {
-    if (element.firstChild) {
+    if (element.firstElementChild) {
         return true;
     }
     else {
