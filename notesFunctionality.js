@@ -36,3 +36,12 @@ function removeNotesElement (element) {
     element.firstChild.remove();
     element.style.backgroundColor = "";
 }
+
+function doesNotesElementExist (element) {
+    if (element.firstChild) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
