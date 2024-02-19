@@ -34,8 +34,10 @@ function addNotesElement (element) {
 }
 
 function removeNotesElement (element) {
-    element.firstChild.remove();
-    element.style.backgroundColor = "";
+    if (element.firstChild) {
+        element.firstChild.remove();
+        element.style.backgroundColor = "";
+    }
 }
 
 function doesNotesElementExist (element) {
