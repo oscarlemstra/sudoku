@@ -16,6 +16,7 @@ notesButton.addEventListener("click", function () {
 
 function addNotesElement (element) {
     element.innerText = "";
+    element.style.color = "";
 
     let parentDivForNotes = document.createElement("div");
     parentDivForNotes.classList.add("flex-box");
