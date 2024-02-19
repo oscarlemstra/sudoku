@@ -31,3 +31,8 @@ function addNotesElement (element) {
     element.appendChild(parentDivForNotes);
     element.style.backgroundColor = "peachpuff";
 }
+
+function removeNotesElement (element) {
+    element.firstChild.remove();
+    element.style.backgroundColor = "";
+}
