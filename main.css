@@ -73,6 +73,14 @@ body {
     text-align: center;
 }
 
+.note {
+    width: 10px;
+    height: 10px;
+    font-size: xx-small;
+    font-weight: bold;
+    text-align: center;
+}
+
 
 /* table */
 table {

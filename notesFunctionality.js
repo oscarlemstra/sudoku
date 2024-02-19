@@ -13,3 +13,21 @@ notesButton.addEventListener("click", function () {
         notesButton.style.backgroundColor = "";
     }
 });
+
+function addNotesElement (element) {
+    let parentDivForNotes = document.createElement("div");
+    parentDivForNotes.classList.add("flex-box");
+    parentDivForNotes.classList.add("flex-wrap");
+    parentDivForNotes.classList.add("justify-content-center");
+    
+    for (i = 0; i < 9; i++) {
+        let childNote = document.createElement("div");
+        childNote.classList.add("note");
+        childNote.innerText = i; // if code is done remove this line
+
+        parentDivForNotes.appendChild(childNote);
+    }
+
+    element.appendChild(parentDivForNotes);
+    element.style.backgroundColor = "peachpuff";
+}
