@@ -27,5 +27,12 @@ function findMirroredNumbers () {
         }
     }
 
-    searchForMirrored(0,0, 1,1, 1,0, 0,1, 8, 8);
+    // Block 1 - Row 1
+    // searchForMirrored(0,0, 1,1, 1,0, 0,1, 8, 8);
+    // searchForMirrored(0,1, 1,2, 1,1, 0,2, 7, 7);
+    // searchForMirrored(0,2, 1,3, 1,2, 0,3, 6, 6);
+
+    // Block 1 - Row 2
+    // searchForMirrored(1,0, 2,1, 2,0, 1,1, 7, 8);
+    searchForMirrored(1,1, 2,2, 2,1, 1,2, 7, 7);
 }
