@@ -11,6 +11,9 @@ for (y = 0; y < 9; y++) {
     }
 }
 
+findMirroredNumbers();
+
+
 // sudoku difficulty curf values
 // sudokuElementsToRemoveAmount:     24, 34, 44, 54, 64
 // sudokuElementsRemovePercentage:   80, 70, 60, 50, 40
