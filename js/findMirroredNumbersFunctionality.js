@@ -34,5 +34,11 @@ function findMirroredNumbers () {
 
     // Block 1 - Row 2
     // searchForMirrored(1,0, 2,1, 2,0, 1,1, 7, 8);
-    searchForMirrored(1,1, 2,2, 2,1, 1,2, 7, 7);
+    // searchForMirrored(1,1, 2,2, 2,1, 1,2, 7, 7);
+    // searchForMirrored(1,2, 2,3, 2,2, 1,3, 7, 6);
+
+    // Block 1 - Row 3
+    // searchForMirrored(2,0, 3,1, 3,0, 2,1, 6, 8);
+    // searchForMirrored(2,1, 3,2, 3,1, 2,2, 6, 7);
+    // searchForMirrored(2,2, 3,3, 3,2, 2,3, 6, 6);
 }
