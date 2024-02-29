@@ -73,4 +73,20 @@ function findMirroredNumbers () {
     // searchForMirrored(5,0, 6,1, 6,0, 5,1, 3, 8);
     // searchForMirrored(5,1, 6,2, 6,1, 5,2, 3, 7);
     // searchForMirrored(5,2, 6,3, 6,2, 5,3, 3, 6);
+
+
+    // Block 5 - Row 1
+    // searchForMirrored(3,3, 4,4, 4,3, 3,4, 5, 5);
+    // searchForMirrored(3,4, 4,5, 4,4, 3,5, 5, 4);
+    // searchForMirrored(3,5, 4,6, 4,5, 3,6, 5, 3);
+
+    // Block 5 - Row 2
+    // searchForMirrored(4,3, 5,4, 5,3, 4,4, 4, 5);
+    // searchForMirrored(4,4, 5,5, 5,4, 4,5, 4, 4);
+    // searchForMirrored(4,5, 5,6, 5,5, 4,6, 4, 3);
+
+    // Block 5 - Row 3
+    // searchForMirrored(5,3, 6,4, 6,3, 5,4, 3, 5);
+    // searchForMirrored(5,4, 6,5, 6,4, 5,5, 3, 4);
+    // searchForMirrored(5,5, 6,6, 6,5, 5,6, 3, 3);
 }
