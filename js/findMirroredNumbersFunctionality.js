@@ -1,4 +1,8 @@
+let a = document.getElementById("sudoku-puzzle").getElementsByTagName("td");
+
 function findMirroredNumbers () {
+    let debug_mirroredNumbersFound = 0;
+
     function getArrayElement (firstIndex, secondIndex) {
         return Number(sudokuElementsArray[firstIndex][secondIndex].innerText);
     }
@@ -19,74 +23,75 @@ function findMirroredNumbers () {
                     debugArrayElement(n2yp+OffsetY,n2xp+OffsetX);
                     debugArrayElement(n3yp+OffsetY,n3xp);
                     debugArrayElement(n4yp,n4xp+OffsetX);
-                }
-                else {
-                    console.log("no mirrored numbers found");
+                    debug_mirroredNumbersFound++;
+                    console.log("group mirroredNumbersFound");
                 }
             }
         }
     }
 
     // Block 1 - Row 1
-    // searchForMirrored(0,0, 1,1, 1,0, 0,1, 8, 8);
-    // searchForMirrored(0,1, 1,2, 1,1, 0,2, 7, 7);
-    // searchForMirrored(0,2, 1,3, 1,2, 0,3, 6, 6);
+    searchForMirrored(0,0, 1,1, 1,0, 0,1, 8, 8);
+    searchForMirrored(0,1, 1,2, 1,1, 0,2, 7, 7);
+    searchForMirrored(0,2, 1,3, 1,2, 0,3, 6, 6);
 
     // Block 1 - Row 2
-    // searchForMirrored(1,0, 2,1, 2,0, 1,1, 7, 8);
-    // searchForMirrored(1,1, 2,2, 2,1, 1,2, 7, 7);
-    // searchForMirrored(1,2, 2,3, 2,2, 1,3, 7, 6);
+    searchForMirrored(1,0, 2,1, 2,0, 1,1, 7, 8);
+    searchForMirrored(1,1, 2,2, 2,1, 1,2, 7, 7);
+    searchForMirrored(1,2, 2,3, 2,2, 1,3, 7, 6);
 
     // Block 1 - Row 3
-    // searchForMirrored(2,0, 3,1, 3,0, 2,1, 6, 8);
-    // searchForMirrored(2,1, 3,2, 3,1, 2,2, 6, 7);
-    // searchForMirrored(2,2, 3,3, 3,2, 2,3, 6, 6);
+    searchForMirrored(2,0, 3,1, 3,0, 2,1, 6, 8);
+    searchForMirrored(2,1, 3,2, 3,1, 2,2, 6, 7);
+    searchForMirrored(2,2, 3,3, 3,2, 2,3, 6, 6);
 
 
     // Block 2 - Row 1
-    // searchForMirrored(0,3, 1,4, 1,3, 0,4, 8, 5);
-    // searchForMirrored(0,4, 1,5, 1,4, 0,5, 8, 4);
-    // searchForMirrored(0,5, 1,6, 1,5, 0,6, 8, 3);
+    searchForMirrored(0,3, 1,4, 1,3, 0,4, 8, 5);
+    searchForMirrored(0,4, 1,5, 1,4, 0,5, 8, 4);
+    searchForMirrored(0,5, 1,6, 1,5, 0,6, 8, 3);
 
     // Block 2 - Row 2
-    // searchForMirrored(1,3, 2,4, 2,3, 1,4, 7, 5);
-    // searchForMirrored(1,4, 2,5, 2,4, 1,5, 7, 4);
-    // searchForMirrored(1,5, 2,6, 2,5, 1,6, 7, 3);
+    searchForMirrored(1,3, 2,4, 2,3, 1,4, 7, 5);
+    searchForMirrored(1,4, 2,5, 2,4, 1,5, 7, 4);
+    searchForMirrored(1,5, 2,6, 2,5, 1,6, 7, 3);
 
     // Block 2 - Row 3
-    // searchForMirrored(2,3, 3,4, 3,3, 2,4, 6, 5);
-    // searchForMirrored(2,4, 3,5, 3,4, 2,5, 6, 4);
-    // searchForMirrored(2,5, 3,6, 3,5, 2,6, 6, 3);
+    searchForMirrored(2,3, 3,4, 3,3, 2,4, 6, 5);
+    searchForMirrored(2,4, 3,5, 3,4, 2,5, 6, 4);
+    searchForMirrored(2,5, 3,6, 3,5, 2,6, 6, 3);
 
 
     // Block 4 - Row 1
-    // searchForMirrored(3,0, 4,1, 4,0, 3,1, 5, 8);
-    // searchForMirrored(3,1, 4,2, 4,1, 3,2, 5, 7);
-    // searchForMirrored(3,2, 4,3, 4,2, 3,3, 5, 6);
+    searchForMirrored(3,0, 4,1, 4,0, 3,1, 5, 8);
+    searchForMirrored(3,1, 4,2, 4,1, 3,2, 5, 7);
+    searchForMirrored(3,2, 4,3, 4,2, 3,3, 5, 6);
 
     // Block 4 - Row 2
-    // searchForMirrored(4,0, 5,1, 5,0, 4,1, 4, 8);
-    // searchForMirrored(4,1, 5,2, 5,1, 4,2, 4, 7);
-    // searchForMirrored(4,2, 5,3, 5,2, 4,3, 4, 6);
+    searchForMirrored(4,0, 5,1, 5,0, 4,1, 4, 8);
+    searchForMirrored(4,1, 5,2, 5,1, 4,2, 4, 7);
+    searchForMirrored(4,2, 5,3, 5,2, 4,3, 4, 6);
 
     // Block 4 - Row 3
-    // searchForMirrored(5,0, 6,1, 6,0, 5,1, 3, 8);
-    // searchForMirrored(5,1, 6,2, 6,1, 5,2, 3, 7);
-    // searchForMirrored(5,2, 6,3, 6,2, 5,3, 3, 6);
+    searchForMirrored(5,0, 6,1, 6,0, 5,1, 3, 8);
+    searchForMirrored(5,1, 6,2, 6,1, 5,2, 3, 7);
+    searchForMirrored(5,2, 6,3, 6,2, 5,3, 3, 6);
 
 
     // Block 5 - Row 1
-    // searchForMirrored(3,3, 4,4, 4,3, 3,4, 5, 5);
-    // searchForMirrored(3,4, 4,5, 4,4, 3,5, 5, 4);
-    // searchForMirrored(3,5, 4,6, 4,5, 3,6, 5, 3);
+    searchForMirrored(3,3, 4,4, 4,3, 3,4, 5, 5);
+    searchForMirrored(3,4, 4,5, 4,4, 3,5, 5, 4);
+    searchForMirrored(3,5, 4,6, 4,5, 3,6, 5, 3);
 
     // Block 5 - Row 2
-    // searchForMirrored(4,3, 5,4, 5,3, 4,4, 4, 5);
-    // searchForMirrored(4,4, 5,5, 5,4, 4,5, 4, 4);
-    // searchForMirrored(4,5, 5,6, 5,5, 4,6, 4, 3);
+    searchForMirrored(4,3, 5,4, 5,3, 4,4, 4, 5);
+    searchForMirrored(4,4, 5,5, 5,4, 4,5, 4, 4);
+    searchForMirrored(4,5, 5,6, 5,5, 4,6, 4, 3);
 
     // Block 5 - Row 3
-    // searchForMirrored(5,3, 6,4, 6,3, 5,4, 3, 5);
-    // searchForMirrored(5,4, 6,5, 6,4, 5,5, 3, 4);
-    // searchForMirrored(5,5, 6,6, 6,5, 5,6, 3, 3);
+    searchForMirrored(5,3, 6,4, 6,3, 5,4, 3, 5);
+    searchForMirrored(5,4, 6,5, 6,4, 5,5, 3, 4);
+    searchForMirrored(5,5, 6,6, 6,5, 5,6, 3, 3);
+
+    console.log(debug_mirroredNumbersFound, "total mirroredNumbersFound");
 }
