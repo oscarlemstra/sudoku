@@ -1,4 +1,4 @@
-let a = document.getElementById("sudoku-puzzle").getElementsByTagName("td");
+let sudokuElementsToEmpty = document.getElementById("sudoku-puzzle").getElementsByTagName("td");
 
 function findMirroredNumbers () {
     let debug_mirroredNumbersFound = 0;
@@ -23,8 +23,15 @@ function findMirroredNumbers () {
                     debugArrayElement(n2yp+OffsetY,n2xp+OffsetX);
                     debugArrayElement(n3yp+OffsetY,n3xp);
                     debugArrayElement(n4yp,n4xp+OffsetX);
+
+                    // sudokuElementsToEmpty.splice(9 * n1yp + n1xp, 1);
+                    // sudokuElementsToEmpty;
+
                     debug_mirroredNumbersFound++;
                     console.log("group mirroredNumbersFound");
+                    
+                    OffsetY = 10;
+                    OffsetX = 10;
                 }
             }
         }
