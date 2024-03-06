@@ -25,13 +25,13 @@ if (sessionStorage.getItem("sudokuElementsToRemoveAmount") === null || sessionSt
 
 // empty sudoku v2
 while (emptiedSudokuElements < Number(sessionStorage.getItem("sudokuElementsToRemoveAmount"))) {
-    for (i = 0; i < sudokuElementsToEmpty.length; i++) {
+    for (i = 0; i < array_sudokuElementsToEmpty.length; i++) {
         if (emptiedSudokuElements >= Number(sessionStorage.getItem("sudokuElementsToRemoveAmount"))) {
             break;
         }
 
-        if (randomInt(101, 0) > Number(sessionStorage.getItem("sudokuElementsRemovePercentage")) && sudokuElementsToEmpty[i].innerText !== "") {
-            sudokuElementsToEmpty[i].innerText = "";
+        if (randomInt(101, 0) > Number(sessionStorage.getItem("sudokuElementsRemovePercentage")) && array_sudokuElementsToEmpty[i].innerText !== "") {
+            array_sudokuElementsToEmpty[i].innerText = "";
             emptiedSudokuElements++;
         }
     }
