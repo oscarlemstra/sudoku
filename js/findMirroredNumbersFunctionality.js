@@ -1,8 +1,8 @@
 let sudokuElementsToEmpty = document.getElementById("sudoku-puzzle").getElementsByTagName("td");
 let array_sudokuElementsToEmpty = Array.from(sudokuElementsToEmpty);
-let mirroredNumbersToLockPos = [];
 
 function findMirroredNumbers () {
+    let mirroredNumbersToLockPos = [];
     let debug_mirroredNumbersFound = 0;
 
     function getArrayElement (firstIndex, secondIndex) {
@@ -108,9 +108,9 @@ function findMirroredNumbers () {
     
     for (i = mirroredNumbersToLockPos.length - 1; i >= 0; i--) {
         array_sudokuElementsToEmpty.splice(9 * mirroredNumbersToLockPos[i][0] + mirroredNumbersToLockPos[i][1], 1);
-        console.log(9 * mirroredNumbersToLockPos[i][0] + mirroredNumbersToLockPos[i][1]);
+        // console.log(9 * mirroredNumbersToLockPos[i][0] + mirroredNumbersToLockPos[i][1]);
     }
 
-    console.log(array_sudokuElementsToEmpty);
+    // console.log(array_sudokuElementsToEmpty);
     console.log(debug_mirroredNumbersFound, "total mirroredNumbersFound");
 }
