@@ -17,12 +17,12 @@ function findMirroredNumbers () {
     // n = number
     // p = position
     // y and x stand for the axis of the array
-    function searchForMirrored (n1yp,n1xp, n2yp,n2xp, n3yp,n3xp, n4yp,n4xp, searchLengthY, searchLengthX) {
+    function searchForMirrored (n1yp, n1xp, n2yp, n2xp, n3yp, n3xp, n4yp, n4xp, searchLengthY, searchLengthX) {
         let foundMirroredToLock = [];
 
         for (OffsetY = 0; OffsetY < searchLengthY; OffsetY++) {
             for (OffsetX = 0; OffsetX < searchLengthX; OffsetX++) {
-                if (getArrayElement(n1yp,n1xp) === getArrayElement(n2yp+OffsetY,n2xp+OffsetX) && getArrayElement(n3yp+OffsetY,n3xp) === getArrayElement(n4yp,n4xp+OffsetX)) {
+                if (getArrayElement(n1yp, n1xp) === getArrayElement(n2yp+OffsetY, n2xp+OffsetX) && getArrayElement(n3yp+OffsetY, n3xp) === getArrayElement(n4yp, n4xp+OffsetX)) {
                     foundMirroredToLock.push(new Array(n1yp, n1xp));
                     foundMirroredToLock.push(new Array(n2yp+OffsetY, n2xp+OffsetX));
                     foundMirroredToLock.push(new Array(n3yp+OffsetY, n3xp));
