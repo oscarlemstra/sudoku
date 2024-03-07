@@ -134,6 +134,9 @@ function findMirroredNumbers () {
 
 
     if (mirroredNumbersToLockPos.length > 17) {
-        sessionStorage.setItem("sudokuElementsToRemoveAmount", "0");
+        let newDifficulty = 81 - mirroredNumbersToLockPos.length;
+
+        sessionStorage.setItem("sudokuElementsToRemoveAmount", newDifficulty.toString());
+        sessionStorage.setItem("sudokuElementsRemovePercentage", "0"); // zorg ervoor dat deze variabel terug gaat naar 80
     }
 }
