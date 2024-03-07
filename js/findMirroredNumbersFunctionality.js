@@ -1,4 +1,4 @@
-let sudokuElementsToEmpty = document.getElementById("sudoku-puzzle").getElementsByTagName("td");
+let sudokuElementsToEmpty = document.getElementById("sudoku-puzzle").getElementsByTagName("td"); // voeg lijn 1 en 2 samen
 let array_sudokuElementsToEmpty = Array.from(sudokuElementsToEmpty);
 
 function findMirroredNumbers () {
@@ -18,23 +18,31 @@ function findMirroredNumbers () {
     // p = position
     // y and x stand for the axis of the array
     function searchForMirrored (n1yp,n1xp, n2yp,n2xp, n3yp,n3xp, n4yp,n4xp, searchLengthY, searchLengthX) {
+        let foundMirroredToLock = [];
+
         for (OffsetY = 0; OffsetY < searchLengthY; OffsetY++) {
             for (OffsetX = 0; OffsetX < searchLengthX; OffsetX++) {
                 if (getArrayElement(n1yp,n1xp) === getArrayElement(n2yp+OffsetY,n2xp+OffsetX) && getArrayElement(n3yp+OffsetY,n3xp) === getArrayElement(n4yp,n4xp+OffsetX)) {
-                    debugArrayElement(n1yp,n1xp);
-                    // debugArrayElement(n2yp+OffsetY,n2xp+OffsetX);
-                    // debugArrayElement(n3yp+OffsetY,n3xp);
-                    // debugArrayElement(n4yp,n4xp+OffsetX);
-
-                    mirroredNumbersToLockPos.push(new Array(n1yp, n1xp));
-
-                    OffsetY = 10;
-                    OffsetX = 10;
+                    foundMirroredToLock.push(new Array(n1yp, n1xp));
+                    foundMirroredToLock.push(new Array(n2yp+OffsetY, n2xp+OffsetX));
+                    foundMirroredToLock.push(new Array(n3yp+OffsetY, n3xp));
+                    foundMirroredToLock.push(new Array(n4yp, n4xp+OffsetX));
                     
                     debug_mirroredNumbersFound++;
                     console.log("group mirroredNumbersFound");
                 }
             }
+        }
+        
+        if (foundMirroredToLock.length === 4) {
+            let index = randomInt(4,1);
+
+            debugArrayElement(foundMirroredToLock[index][0], foundMirroredToLock[index][1]);
+            mirroredNumbersToLockPos.push(new Array(foundMirroredToLock[index][0], foundMirroredToLock[index][1]));
+        }
+        else if (foundMirroredToLock.length > 4) {
+            debugArrayElement(n1yp, n1xp);
+            mirroredNumbersToLockPos.push(new Array(n1yp, n1xp));
         }
     }
 
@@ -108,6 +116,7 @@ function findMirroredNumbers () {
     
     for (i = mirroredNumbersToLockPos.length - 1; i >= 0; i--) {
         array_sudokuElementsToEmpty.splice(9 * mirroredNumbersToLockPos[i][0] + mirroredNumbersToLockPos[i][1], 1);
+        console.log(9 * mirroredNumbersToLockPos[i][0] + mirroredNumbersToLockPos[i][1]);
     }
 
     console.log(debug_mirroredNumbersFound, "total mirroredNumbersFound");
