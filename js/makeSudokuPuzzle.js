@@ -35,7 +35,7 @@ while (emptiedSudokuElements < Number(sessionStorage.getItem("sudokuElementsToRe
             emptiedSudokuElements++;
         }
     }
-    console.log("while loops");
+    console.log("empty sudoku");
 }
 console.log(emptiedSudokuElements, "emptied sudoku elements");
 
