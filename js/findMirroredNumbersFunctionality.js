@@ -112,6 +112,17 @@ function findMirroredNumbers () {
     
     
     mirroredNumbersToLockPos = mirroredNumbersToLockPos.sort();
+
+    // removes the duplicates in mirroredNumbersToLockPos array
+    let compareValue = [];
+    for (i = mirroredNumbersToLockPos.length - 1; i >= 0; i--) {
+        if (JSON.stringify(mirroredNumbersToLockPos[i]) === JSON.stringify(compareValue)) {
+            mirroredNumbersToLockPos.splice(i, 1);
+            console.log("removed duplicate value", compareValue);
+        }
+        compareValue = mirroredNumbersToLockPos[i];
+    }
+
     console.log("locked numbers positions", mirroredNumbersToLockPos);
     
     // removes the numbers that are locked from the sudokuElementsToEmpty array
