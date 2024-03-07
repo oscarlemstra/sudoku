@@ -112,11 +112,11 @@ function findMirroredNumbers () {
     searchForMirrored(5,5, 6,6, 6,5, 5,6, 3, 3);
     
     
-    console.log(mirroredNumbersToLockPos);
+    mirroredNumbersToLockPos = mirroredNumbersToLockPos.sort();
+    console.log("locked numbers positions", mirroredNumbersToLockPos);
     
     for (i = mirroredNumbersToLockPos.length - 1; i >= 0; i--) {
         array_sudokuElementsToEmpty.splice(9 * mirroredNumbersToLockPos[i][0] + mirroredNumbersToLockPos[i][1], 1);
-        console.log(9 * mirroredNumbersToLockPos[i][0] + mirroredNumbersToLockPos[i][1]);
     }
 
     console.log(debug_mirroredNumbersFound, "total mirroredNumbersFound");
