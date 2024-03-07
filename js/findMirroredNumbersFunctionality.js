@@ -114,9 +114,15 @@ function findMirroredNumbers () {
     mirroredNumbersToLockPos = mirroredNumbersToLockPos.sort();
     console.log("locked numbers positions", mirroredNumbersToLockPos);
     
+    // removes the numbers that are locked from the sudokuElementsToEmpty array
     for (i = mirroredNumbersToLockPos.length - 1; i >= 0; i--) {
         sudokuElementsToEmpty.splice(9 * mirroredNumbersToLockPos[i][0] + mirroredNumbersToLockPos[i][1], 1);
     }
 
     console.log(debug_mirroredNumbersFound, "total mirroredNumbersFound");
+
+
+    if (mirroredNumbersToLockPos.length > 17) {
+        sessionStorage.setItem("sudokuElementsToRemoveAmount", "0");
+    }
 }
