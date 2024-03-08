@@ -133,7 +133,7 @@ function findMirroredNumbers () {
     console.log(debug_mirroredNumbersFound, "total mirroredNumbersFound");
 
 
-    if (mirroredNumbersToLockPos.length > 17) {
+    if (mirroredNumbersToLockPos.length >= 17 && Number(sessionStorage.getItem("sudokuElementsRemovePercentage")) === 40) {
         let newDifficulty = 81 - mirroredNumbersToLockPos.length;
 
         sessionStorage.setItem("sudokuElementsToRemoveAmount", newDifficulty.toString());
