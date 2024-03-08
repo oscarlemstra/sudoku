@@ -36,11 +36,11 @@ function findMirroredNumbers () {
         if (foundMirroredToLock.length === 4) {
             let index = randomInt(4,1);
 
-            debugArrayElement(foundMirroredToLock[index][0], foundMirroredToLock[index][1]);
+            // debugArrayElement(foundMirroredToLock[index][0], foundMirroredToLock[index][1]);
             mirroredNumbersToLockPos.push(new Array(foundMirroredToLock[index][0], foundMirroredToLock[index][1]));
         }
         else if (foundMirroredToLock.length > 4) {
-            debugArrayElement(n1yp, n1xp);
+            // debugArrayElement(n1yp, n1xp);
             mirroredNumbersToLockPos.push(new Array(n1yp, n1xp));
         }
     }
