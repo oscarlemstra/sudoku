@@ -133,10 +133,14 @@ function findMirroredNumbers () {
     console.log(debug_mirroredNumbersFound, "total mirroredNumbersFound");
 
 
-    if (mirroredNumbersToLockPos.length >= 17 && Number(sessionStorage.getItem("sudokuElementsRemovePercentage")) === 40) {
+    if (mirroredNumbersToLockPos.length >= 17 && Number(sessionStorage.getItem("sudokuElementsRemovePercentage")) === 40 || Number(sessionStorage.getItem("sudokuElementsRemovePercentage")) === 0) {
         let newDifficulty = 81 - mirroredNumbersToLockPos.length;
 
         sessionStorage.setItem("sudokuElementsToRemoveAmount", newDifficulty.toString());
-        sessionStorage.setItem("sudokuElementsRemovePercentage", "0"); // zorg ervoor dat deze variabel terug gaat naar 80
+        sessionStorage.setItem("sudokuElementsRemovePercentage", "0");
+    } 
+    else if (mirroredNumbersToLockPos.length < 17 && Number(sessionStorage.getItem("sudokuElementsRemovePercentage")) === 0) {
+        sessionStorage.setItem("sudokuElementsToRemoveAmount", "64");
+        sessionStorage.setItem("sudokuElementsRemovePercentage", "40");
     }
 }
