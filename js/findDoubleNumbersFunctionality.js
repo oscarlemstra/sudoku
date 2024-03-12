@@ -12,7 +12,7 @@ function lookForDoubleNumbersInArea (number, minYpos, maxYpos, minXpos, maxXpos)
 
     for (y = minYpos; y < maxYpos; y++) {
         for (x = minXpos; x < maxXpos; x++) {
-            if (number === sudokuElementsArray[y][x].innerText) {
+            if (number === sudokuElementsArray[y][x].innerText && sudokuElementsArray[y][x].style.backgroundColor !== "peachpuff") {
                 foundNumbers.push(sudokuElementsArray[y][x]);
             }
         }
