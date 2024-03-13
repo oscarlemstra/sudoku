@@ -54,6 +54,12 @@ function setSudokuElement (element) {
     element.innerText = selectedNumber;
 }
 
+let a = false; // test code
+if (a) {
+    loadPuzzle();
+    makeRedSudokuElementsBlack();
+    makeDoubleNumbersRed();
+}
 
 // gives all the empty #sudoku-puzzle td elements the onclick event: makeRedSudokuElementsBlack, setSudokuElement, makeDoubleNumbersRed
 for (y = 0; y < 9; y++) {
@@ -61,7 +67,7 @@ for (y = 0; y < 9; y++) {
     for (x = 0; x < 9; x++) {
         let xx = x;
 
-        if (sudokuElementsArray[yy][xx].innerText === "") {
+        if (sudokuElementsArray[yy][xx].style.backgroundColor !== "lightgrey") {
             sudokuElementsArray[yy][xx].addEventListener("click", function () {
                 if (!canMakeNotes) {
                     removeNotesElement(sudokuElementsArray[yy][xx]);
