@@ -52,6 +52,13 @@ body {
     user-select: none;
 }
 
+#load-puzzle-button {
+    font-weight: bold;
+    color: white;
+    width: 170px;
+    text-align: center;
+}
+
 
 /* class */
 .difficulty-button {
