@@ -59,6 +59,17 @@ body {
     text-align: center;
 }
 
+#save-puzzle-button {
+    background-color: white;
+    border-radius: 10px;
+    width: 48px;
+    height: 48px;
+}
+
+#save-puzzle-button:hover {
+    background-color: limegreen;
+}
+
 
 /* class */
 .difficulty-button {

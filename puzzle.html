@@ -7,7 +7,12 @@
     <title>Sudoku</title>
 </head>
 <body class="flex-box m-0 vh-100 justify-content-center align-items-center flex-direction-column gap-20">
-    <a id="new-sudoku" href="./index.html">Nieuwe Sudoku</a>
+    <div class="flex-box gap-8">
+        <a id="new-sudoku" href="./index.html">Nieuwe Sudoku</a>
+        <div id="save-puzzle-button" class="flex-box justify-content-center align-items-center">
+            <img src="./images/save-icon.png" alt="save-icon">
+        </div>
+    </div>
     <div id="main-div" class="flex-box flex-wrap align-items-center justify-content-space-evenly gap-20 p-20">
         <div id="sudoku-puzzle">
             <table>
