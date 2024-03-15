@@ -3,6 +3,7 @@ let level_2 = document.getElementById("level-2");
 let level_3 = document.getElementById("level-3");
 let level_4 = document.getElementById("level-4");
 let level_5 = document.getElementById("level-5");
+let load_puzzle_button = document.getElementById("load-puzzle-button");
 
 
 // sudoku difficulty curf values
@@ -37,4 +38,17 @@ level_5.addEventListener("click", function () {
     window.location.href = "./puzzle.html";
     sessionStorage.setItem("sudokuElementsToRemoveAmount", "64");
     sessionStorage.setItem("sudokuElementsRemovePercentage", "40");
+});
+
+
+sessionStorage.setItem("canLoadPuzzle", "false");
+
+load_puzzle_button.addEventListener("click", function () {
+    if (sessionStorage.getItem("puzzleData") !== null) {
+        sessionStorage.setItem("canLoadPuzzle", "true");
+        window.location.href = "./puzzle.html";
+    }
+    else {
+        load_puzzle_button.innerText = "Geen Opgeslagen Puzzel Gevonden";
+    }
 });
