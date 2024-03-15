@@ -15,36 +15,32 @@ function savePuzzle () {
     localStorage.setItem("emptiedSudokuElements", emptiedSudokuElements);
 
     // saves the puzzleSolution
-    if (localStorage.getItem("puzzleSolution") === null) {
-        localStorage.setItem("puzzleSolution", JSON.stringify(sudokuSolution));
-        console.log("puzzle solution saved");
-    }
+    localStorage.setItem("puzzleSolution", JSON.stringify(sudokuSolution));
 
     // saves the puzzleData
-    if (localStorage.getItem("puzzleData") === null) {
-        for (i = 0; i < sudokuElements.length; i++) {
-            puzzleData[i] = new Array(sudokuElements[i].style.backgroundColor, sudokuElements[i].innerHTML);
-        }
-
-        localStorage.setItem("puzzleData", JSON.stringify(puzzleData));
-        console.log("puzzle data saved");
+    for (i = 0; i < sudokuElements.length; i++) {
+        puzzleData[i] = new Array(sudokuElements[i].style.backgroundColor, sudokuElements[i].innerHTML);
     }
+
+    localStorage.setItem("puzzleData", JSON.stringify(puzzleData));
 }
 
 function loadPuzzle () {
     let puzzleSolution = JSON.parse(localStorage.getItem("puzzleSolution"));
     let puzzleData = JSON.parse(localStorage.getItem("puzzleData"));
 
+    // loads the userInputAmount
     userInputAmount = Number(localStorage.getItem("userInputAmount"));
+
+    // loads the emptiedSudokuElements
     emptiedSudokuElements = Number(localStorage.getItem("emptiedSudokuElements"));
 
+    // loads the puzzleSolution
     sudokuSolution = puzzleSolution;
 
+    // loads the puzzleData
     for (i = 0; i < sudokuElements.length; i++) {
         sudokuElements[i].style.backgroundColor = puzzleData[i][0];
         sudokuElements[i].innerHTML = puzzleData[i][1];
     }
-
-    // console.log(puzzleSolution);
-    // console.log(puzzleData);
 }
