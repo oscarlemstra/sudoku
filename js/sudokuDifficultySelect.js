@@ -44,7 +44,7 @@ level_5.addEventListener("click", function () {
 sessionStorage.setItem("canLoadPuzzle", "false");
 
 load_puzzle_button.addEventListener("click", function () {
-    if (sessionStorage.getItem("puzzleData") !== null) {
+    if (localStorage.getItem("puzzleData") !== null) {
         sessionStorage.setItem("canLoadPuzzle", "true");
         window.location.href = "./puzzle.html";
     }

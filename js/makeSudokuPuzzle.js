@@ -54,8 +54,8 @@ function setSudokuElement (element) {
     element.innerText = selectedNumber;
 }
 
-let canLoadPuzzle = false; // test code
-if (canLoadPuzzle) {
+
+if (sessionStorage.getItem("canLoadPuzzle") === "true") {
     loadPuzzle();
     makeRedSudokuElementsBlack();
     makeDoubleNumbersRed();

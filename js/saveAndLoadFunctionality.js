@@ -1,3 +1,11 @@
+let save_puzzle_button = document.getElementById("save-puzzle-button");
+
+save_puzzle_button.addEventListener("click", function () {
+    savePuzzle();
+    sessionStorage.setItem("canLoadPuzzle", "true");
+});
+
+
 function savePuzzle () {
     let date = new Date().toLocaleDateString();
     let time = new Date().toLocaleTimeString();
